@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500;1,6..96,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script async id="instagram-embed-script" src="https://www.instagram.com/embed.js"></script>
 <style>
   :root {
     --parchment-base: #FAF7F2;
@@ -372,17 +373,18 @@
     display: block;
   }
 
-  /* ========== THE DOOR: HYPER-MINIMAL VISUAL-FIRST EDITORIAL ========== */
+  /* ========== THE DOOR: NATIVE INSTAGRAM EMBEDS EDITORIAL FEED ========== */
   .thedoor-feed {
     display: flex;
     flex-direction: column;
-    gap: 36px;
+    gap: 40px;
     height: 100%;
-    max-height: 520px;
+    max-height: calc(100vh - 200px);
     overflow-y: auto;
-    padding: 6px 16px 48px 6px;
+    overflow-x: hidden;
+    padding: 6px 18px 60px 6px;
     scrollbar-width: thin;
-    scrollbar-color: rgba(180, 130, 60, 0.28) transparent;
+    scrollbar-color: rgba(180, 130, 60, 0.32) transparent;
   }
   .thedoor-feed::-webkit-scrollbar {
     width: 4px;
@@ -391,94 +393,179 @@
     background: transparent;
   }
   .thedoor-feed::-webkit-scrollbar-thumb {
-    background: rgba(180, 130, 60, 0.28);
+    background: rgba(180, 130, 60, 0.32);
     border-radius: 4px;
   }
   .thedoor-feed::-webkit-scrollbar-thumb:hover {
-    background: rgba(180, 130, 60, 0.6);
+    background: rgba(180, 130, 60, 0.65);
   }
 
-  .thedoor-item {
+  .thedoor-client-section {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     width: 100%;
-    max-width: 660px;
-    margin: 0 auto;
     position: relative;
     z-index: 2;
   }
 
-  .thedoor-photo-link {
-    display: block;
-    width: 100%;
-    text-decoration: none;
-    border-radius: 2px;
-    overflow: hidden;
-    background: #0d0a08;
-    box-shadow: 
-      0 16px 36px -6px rgba(45, 30, 15, 0.26),
-      0 4px 14px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    transition: transform 0.35s cubic-bezier(0.2, 0.85, 0.25, 1), box-shadow 0.35s ease;
-  }
-  .thedoor-photo-link:hover {
-    transform: translateY(-3px) scale(1.008);
-    box-shadow: 
-      0 22px 46px -6px rgba(45, 30, 15, 0.36),
-      0 6px 18px rgba(0, 0, 0, 0.14);
-  }
-
-  .thedoor-photo {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    object-position: left center;
-  }
-
-  .thedoor-caption {
+  /* Client Header: Name + (xx followers) + [↗ Visit Instagram] */
+  .thedoor-client-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     padding: 0 4px;
-    margin-top: 2px;
+  }
+
+  .thedoor-client-title-row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px 12px;
   }
 
   .thedoor-client-name {
     font-family: var(--serif-display);
-    font-size: 15px;
+    font-size: 19px;
     font-weight: 700;
     color: #1A120B;
     letter-spacing: 0.02em;
     line-height: 1.25;
-    margin-bottom: 2px;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9), 0 0 6px rgba(255, 252, 246, 0.8);
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 252, 246, 0.85);
+  }
+
+  .thedoor-followers-tag {
+    font-family: var(--serif-body);
+    font-style: italic;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #785A3C;
+    letter-spacing: 0.01em;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
+  }
+
+  .thedoor-insta-link {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #8C4B00;
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
+  }
+  .thedoor-insta-link:hover {
+    color: #1A120B;
+    text-decoration: underline;
+    transform: translateY(-1px);
   }
 
   .thedoor-client-copy {
     font-family: var(--serif-body);
     font-size: 13px;
     line-height: 1.45;
-    color: #261E16;
+    color: #3A2B1E;
     font-weight: 500;
+    margin: 2px 0 0 0;
     text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9), 0 0 6px rgba(255, 252, 246, 0.8);
   }
 
-  .thedoor-insta-link {
+  /* Multi-post selector pills */
+  .thedoor-pills-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding: 2px 4px 6px 4px;
+  }
+
+  .thedoor-post-pill {
+    appearance: none;
+    -webkit-appearance: none;
+    background: rgba(255, 252, 246, 0.75);
+    border: 1px solid rgba(180, 130, 60, 0.35);
+    border-radius: 20px;
+    padding: 4px 12px;
     font-family: var(--sans);
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    color: #8C4B00;
-    text-decoration: none;
-    margin-left: 6px;
-    white-space: nowrap;
-    transition: color 0.2s ease, text-decoration 0.2s ease;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: #5A3A1C;
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(0.2, 0.8, 0.25, 1);
     display: inline-flex;
     align-items: center;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
+    gap: 6px;
+    box-shadow: 0 1px 4px rgba(60, 40, 20, 0.06);
   }
-  .thedoor-insta-link:hover {
+  .thedoor-post-pill:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(180, 130, 60, 0.65);
     color: #1A120B;
-    text-decoration: underline;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(60, 40, 20, 0.1);
+  }
+  .thedoor-post-pill.active {
+    background: #2A1D13;
+    border-color: #2A1D13;
+    color: #FAF6EF;
+    box-shadow: 0 3px 10px rgba(42, 29, 19, 0.25);
+  }
+  .thedoor-post-pill .pill-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #8C4B00;
+    display: inline-block;
+    transition: background 0.2s ease;
+  }
+  .thedoor-post-pill.active .pill-dot {
+    background: #E8B878;
+  }
+
+  /* Horizontal Snap Track for Instagram Embeds */
+  .thedoor-embeds-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    padding: 6px 4px 16px 4px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(180, 130, 60, 0.28) transparent;
+    -webkit-overflow-scrolling: touch;
+  }
+  .thedoor-embeds-track::-webkit-scrollbar {
+    height: 4px;
+  }
+  .thedoor-embeds-track::-webkit-scrollbar-thumb {
+    background: rgba(180, 130, 60, 0.28);
+    border-radius: 4px;
+  }
+  .thedoor-embeds-track::-webkit-scrollbar-thumb:hover {
+    background: rgba(180, 130, 60, 0.6);
+  }
+
+  .thedoor-embed-card {
+    flex: 0 0 360px;
+    min-width: 326px;
+    max-width: 380px;
+    scroll-snap-align: start;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  .thedoor-embed-card .instagram-media {
+    margin: 0 !important;
+    border-radius: 12px !important;
+    box-shadow: 
+      0 12px 28px -4px rgba(45, 30, 15, 0.16),
+      0 3px 10px rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.75) !important;
+    background: #FFFFFF !important;
   }
 
   /* ========== FROSTED VINTAGE GLASSMORPHISM CARD STYLING ========== */
@@ -1416,32 +1503,94 @@ window.__IMG__ = {
       summary: 'Strategic influencer seeding, VIP event activations, and high-engagement social content direction across premier culinary & lifestyle brands.',
       clients: [
         {
-          id: 'carbone',
-          name: 'Carbone Fine Food',
-          img: IMG.thedoor.carbone,
-          copy: 'Selected 100+ influencers for VIP event activations & exclusive mailers.',
-          link: 'https://www.instagram.com/p/DP43pPKkhH5/'
-        },
-        {
           id: 'firehook',
           name: 'Firehook Bakery',
-          img: IMG.thedoor.firehook,
-          copy: '80+ Mailers | 50+ Event Guests | 70+ Social Placements. Generated 13.9M+ combined estimated social reach. Directed 10-concept promotional photoshoot.',
-          link: 'https://www.instagram.com/p/DRShDqnEXUA/?img_index=1'
+          followers: '22.3K followers',
+          profileUrl: 'https://www.instagram.com/firehook/',
+          copy: 'Selected 100+ influencers for mailers & events. Generated 13.98M+ combined estimated social reach across 80+ recipients & 50+ VIP guests.',
+          posts: [
+            {
+              id: 'firehook-post-1',
+              label: 'Mailer Post (8.18M Reach)',
+              badge: '8.18M Reach',
+              url: 'https://www.instagram.com/p/DRShDqnEXUA/?img_index=1'
+            },
+            {
+              id: 'firehook-post-2',
+              label: 'Event Post (5.8M Reach)',
+              badge: '5.8M Reach',
+              url: 'https://www.instagram.com/p/DRkm063EouO/?img_index=2'
+            }
+          ]
+        },
+        {
+          id: 'carbone',
+          name: 'Carbone Fine Food',
+          followers: '148K followers',
+          profileUrl: 'https://www.instagram.com/carbonefinefood/',
+          copy: 'Selected 100+ influencers to receive a special mailer and exclusive event invitations.',
+          posts: [
+            {
+              id: 'carbone-post-1',
+              label: 'Post 1 (22.1K likes)',
+              badge: '22.1K likes',
+              url: 'https://www.instagram.com/p/DP43pPKkhH5/'
+            },
+            {
+              id: 'carbone-post-2',
+              label: 'Post 2 (Product Activation)',
+              badge: 'Activation',
+              url: 'https://www.instagram.com/p/DQk8_8BCePF/'
+            },
+            {
+              id: 'carbone-post-3',
+              label: 'Post 3 (Culinary Seeding)',
+              badge: 'Culinary Seeding',
+              url: 'https://www.instagram.com/p/DQ9xFDyDsWH/'
+            }
+          ]
         },
         {
           id: 'citarella',
-          name: 'Citarella',
-          img: IMG.thedoor.citarella,
-          copy: 'Curated individual influencer briefs for the iconic 12 Days of Christmas campaign.',
-          link: 'https://www.instagram.com/p/DSLYuvjkncj/'
+          name: 'Citarella Gourmet Market',
+          followers: '53K followers',
+          profileUrl: 'https://www.instagram.com/citarellagourmetmarket/',
+          copy: 'Created 12 individual influencer briefs for the iconic 12 Days of Christmas campaign.',
+          posts: [
+            {
+              id: 'citarella-post-1',
+              label: 'Post 1 (4.3K likes)',
+              badge: '4.3K likes',
+              url: 'https://www.instagram.com/p/DSLYuvjkncj/'
+            },
+            {
+              id: 'citarella-post-2',
+              label: 'Post 2 (1.1K likes)',
+              badge: '1.1K likes',
+              url: 'https://www.instagram.com/p/DSS7pEVkr4A/'
+            },
+            {
+              id: 'citarella-post-3',
+              label: 'Post 3 (1.0K likes)',
+              badge: '1.0K likes',
+              url: 'https://www.instagram.com/p/DSD-KiYDfZe/'
+            }
+          ]
         },
         {
           id: 'rachael',
           name: 'Rachael Ray',
-          img: IMG.thedoor.rachael,
-          copy: '(1.6M+ Followers). Produced auto-play video & carousel content achieving 2.9× benchmark engagement.',
-          link: 'https://www.instagram.com/p/DQh9zh8jz5C/?img_index=5'
+          followers: '1.6M+ followers',
+          profileUrl: 'https://www.instagram.com/rachaelray/',
+          copy: 'Produced auto-play video and carousel content achieving 2.9× benchmark engagement.',
+          posts: [
+            {
+              id: 'rachael-post-1',
+              label: 'Post 1 (6.1K likes • 2.9×)',
+              badge: '6.1K likes • 2.9×',
+              url: 'https://www.instagram.com/p/DQh9zh8jz5C/?img_index=5'
+            }
+          ]
         }
       ]
     },
@@ -1730,7 +1879,8 @@ window.__IMG__ = {
     if (cat.kind === 'about') {
       renderAboutSection(cat);
     } else if (cat.key === 'thedoor') {
-      renderTheDoorMinimal(cat);
+      renderTheDoorEmbeds(cat);
+      triggerInstagramEmbeds();
     } else {
       renderWorkGrid(cat);
     }
@@ -1997,56 +2147,161 @@ window.__IMG__ = {
     }
   }
 
-  /* ========== THE DOOR: HYPER-MINIMAL VISUAL-FIRST EDITORIAL RENDERER ========== */
-  function renderTheDoorMinimal(cat) {
+  /* ========== THE DOOR: NATIVE INSTAGRAM EMBEDS RENDERER ========== */
+  function triggerInstagramEmbeds() {
+    function run() {
+      if (window.instgrm && window.instgrm.Embeds) {
+        try {
+          window.instgrm.Embeds.process();
+        } catch (err) {
+          console.warn('Instagram Embeds.process error:', err);
+        }
+      }
+    }
+    run();
+    setTimeout(run, 120);
+    setTimeout(run, 450);
+    setTimeout(run, 1200);
+  }
+
+  var igScript = document.getElementById('instagram-embed-script');
+  if (igScript) {
+    igScript.addEventListener('load', function() {
+      if (window.instgrm && window.instgrm.Embeds) {
+        window.instgrm.Embeds.process();
+      }
+    });
+  }
+
+  function renderTheDoorEmbeds(cat) {
     var feed = document.createElement('div');
     feed.className = 'thedoor-feed';
 
     cat.clients.forEach(function(client) {
-      var item = document.createElement('div');
-      item.className = 'thedoor-item';
+      var section = document.createElement('div');
+      section.className = 'thedoor-client-section';
 
-      // 1. Massive Clean Image Placeholder (Physical photo resting directly on the leaf)
-      var photoLink = document.createElement('a');
-      photoLink.href = client.link;
-      photoLink.target = '_blank';
-      photoLink.rel = 'noopener noreferrer';
-      photoLink.className = 'thedoor-photo-link';
-      photoLink.title = 'Open ' + client.name + ' on Instagram';
+      // 1. Client Header: Name + (xx followers) + [↗ Visit Instagram]
+      var header = document.createElement('div');
+      header.className = 'thedoor-client-header';
 
-      var img = document.createElement('img');
-      img.src = client.img;
-      img.alt = client.name;
-      img.loading = 'lazy';
-      img.className = 'thedoor-photo';
-      photoLink.appendChild(img);
-      item.appendChild(photoLink);
+      var titleRow = document.createElement('div');
+      titleRow.className = 'thedoor-client-title-row';
 
-      // 2. Tiny, elegant caption directly underneath
-      var caption = document.createElement('div');
-      caption.className = 'thedoor-caption';
+      var nameEl = document.createElement('h3');
+      nameEl.className = 'thedoor-client-name';
+      nameEl.textContent = client.name;
+      titleRow.appendChild(nameEl);
 
-      var clientName = document.createElement('h3');
-      clientName.className = 'thedoor-client-name';
-      clientName.textContent = client.name;
-      caption.appendChild(clientName);
+      var followersEl = document.createElement('span');
+      followersEl.className = 'thedoor-followers-tag';
+      followersEl.textContent = '(' + client.followers + ')';
+      titleRow.appendChild(followersEl);
 
-      var copyP = document.createElement('p');
-      copyP.className = 'thedoor-client-copy';
-      copyP.textContent = client.copy + ' ';
+      var profileLink = document.createElement('a');
+      profileLink.href = client.profileUrl;
+      profileLink.target = '_blank';
+      profileLink.rel = 'noopener noreferrer';
+      profileLink.className = 'thedoor-insta-link';
+      profileLink.textContent = '[↗ Visit Instagram]';
+      profileLink.title = 'Open ' + client.name + ' on Instagram';
+      titleRow.appendChild(profileLink);
 
-      var instaLink = document.createElement('a');
-      instaLink.href = client.link;
-      instaLink.target = '_blank';
-      instaLink.rel = 'noopener noreferrer';
-      instaLink.className = 'thedoor-insta-link';
-      instaLink.textContent = '[↗ Visit Instagram]';
-      copyP.appendChild(instaLink);
+      header.appendChild(titleRow);
 
-      caption.appendChild(copyP);
-      item.appendChild(caption);
+      if (client.copy) {
+        var copyP = document.createElement('p');
+        copyP.className = 'thedoor-client-copy';
+        copyP.textContent = client.copy;
+        header.appendChild(copyP);
+      }
 
-      feed.appendChild(item);
+      section.appendChild(header);
+
+      // 2. Multi-post selector pills (if more than 1 post)
+      var track = document.createElement('div');
+      track.className = 'thedoor-embeds-track';
+
+      if (client.posts && client.posts.length > 1) {
+        var pillsRow = document.createElement('div');
+        pillsRow.className = 'thedoor-pills-row';
+
+        client.posts.forEach(function(post, pIdx) {
+          var pill = document.createElement('button');
+          pill.type = 'button';
+          pill.className = 'thedoor-post-pill' + (pIdx === 0 ? ' active' : '');
+          pill.setAttribute('data-target', post.id);
+
+          var dot = document.createElement('span');
+          dot.className = 'pill-dot';
+          pill.appendChild(dot);
+
+          var pillText = document.createTextNode(' ' + post.label);
+          pill.appendChild(pillText);
+
+          pill.addEventListener('click', function() {
+            var targetCard = track.querySelector('#' + post.id);
+            if (targetCard) {
+              targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+            pillsRow.querySelectorAll('.thedoor-post-pill').forEach(function(p) {
+              p.classList.remove('active');
+            });
+            pill.classList.add('active');
+          });
+
+          pillsRow.appendChild(pill);
+        });
+
+        section.appendChild(pillsRow);
+      }
+
+      // 3. Instagram Embed Cards inside Track
+      if (client.posts && client.posts.length > 0) {
+        client.posts.forEach(function(post) {
+          var card = document.createElement('div');
+          card.className = 'thedoor-embed-card';
+          card.id = post.id;
+
+          var bq = document.createElement('blockquote');
+          bq.className = 'instagram-media';
+          bq.setAttribute('data-instgrm-permalink', post.url);
+          bq.setAttribute('data-instgrm-version', '14');
+          bq.style.background = '#FFFFFF';
+          bq.style.border = '0';
+          bq.style.borderRadius = '12px';
+          bq.style.boxShadow = '0 10px 26px -4px rgba(45,30,15,0.18), 0 2px 8px rgba(0,0,0,0.06)';
+          bq.style.margin = '0 auto';
+          bq.style.maxWidth = '380px';
+          bq.style.minWidth = '326px';
+          bq.style.padding = '0';
+          bq.style.width = '100%';
+
+          var fallbackDiv = document.createElement('div');
+          fallbackDiv.style.padding = '24px 16px';
+          fallbackDiv.style.textAlign = 'center';
+
+          var fallbackA = document.createElement('a');
+          fallbackA.href = post.url;
+          fallbackA.target = '_blank';
+          fallbackA.rel = 'noopener noreferrer';
+          fallbackA.style.fontFamily = 'var(--sans)';
+          fallbackA.style.fontSize = '12px';
+          fallbackA.style.fontWeight = '600';
+          fallbackA.style.color = '#8C4B00';
+          fallbackA.style.textDecoration = 'none';
+          fallbackA.textContent = '↗ View ' + (post.badge || 'Post') + ' on Instagram';
+
+          fallbackDiv.appendChild(fallbackA);
+          bq.appendChild(fallbackDiv);
+          card.appendChild(bq);
+          track.appendChild(card);
+        });
+
+        section.appendChild(track);
+      }
+
+      feed.appendChild(section);
     });
 
     galleryBody.appendChild(feed);
