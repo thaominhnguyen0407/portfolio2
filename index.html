@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thao (Audrey) Nguyen — Creative Archive</title>
 <meta name="description" content="Botanical creative portfolio of Thao (Audrey) Nguyen. High-fashion brand strategy, digital campaigns, and artistic direction.">
-<script async src="//www.instagram.com/embed.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500;1,6..96,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -373,298 +372,113 @@
     display: block;
   }
 
-  /* ========== THE DOOR 4-CLIENT BENTO GRID ========== */
-  .thedoor-grid {
-    display: grid;
-    grid-template-columns: 1.12fr 0.88fr;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 10px;
-    height: 100%;
-    max-height: 485px;
-  }
-  .thedoor-card {
-    position: relative;
-    background: rgba(252, 249, 242, 0.58);
-    backdrop-filter: blur(14px) saturate(135%);
-    -webkit-backdrop-filter: blur(14px) saturate(135%);
-    border: 1px solid rgba(190, 135, 65, 0.38);
-    border-radius: 2px;
-    padding: 7px 10px 8px 10px;
+  /* ========== THE DOOR: HYPER-MINIMAL VISUAL-FIRST EDITORIAL ========== */
+  .thedoor-feed {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 
-      0 6px 20px -3px rgba(110, 75, 35, 0.08),
-      inset 0 1px 1.5px rgba(255, 255, 255, 0.85),
-      inset 0 -1px 1px rgba(190, 135, 65, 0.15);
-    transition: 
-      transform 0.35s cubic-bezier(0.2, 0.85, 0.25, 1), 
-      box-shadow 0.35s ease, 
-      border-color 0.35s ease,
-      background 0.35s ease,
-      opacity 0.35s ease,
-      filter 0.35s ease;
-    cursor: pointer;
-    overflow: hidden;
+    gap: 36px;
+    height: 100%;
+    max-height: 520px;
+    overflow-y: auto;
+    padding: 6px 16px 48px 6px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(180, 130, 60, 0.28) transparent;
+  }
+  .thedoor-feed::-webkit-scrollbar {
+    width: 4px;
+  }
+  .thedoor-feed::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .thedoor-feed::-webkit-scrollbar-thumb {
+    background: rgba(180, 130, 60, 0.28);
+    border-radius: 4px;
+  }
+  .thedoor-feed::-webkit-scrollbar-thumb:hover {
+    background: rgba(180, 130, 60, 0.6);
+  }
+
+  .thedoor-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 660px;
+    margin: 0 auto;
+    position: relative;
     z-index: 2;
   }
-  .thedoor-card.is-hero {
-    grid-row: 1 / span 3;
-    grid-column: 1;
-    padding: 10px 12px 10px 12px;
-    gap: 3px;
-  }
-  .thedoor-card:not(.is-hero) {
-    grid-column: 2;
-    padding: 5px 9px 5px 9px;
-  }
-  .thedoor-card:hover {
-    opacity: 1 !important;
-    filter: brightness(1.03) !important;
-    transform: translateY(-4px) scale(1.015) !important;
-    z-index: 30 !important;
-    background: rgba(255, 253, 248, 0.92) !important;
-    border-color: rgba(215, 145, 45, 0.95) !important;
-    box-shadow: 
-      0 20px 45px -6px rgba(165, 100, 30, 0.40),
-      0 0 28px rgba(240, 185, 80, 0.35),
-      0 0 0 2px rgba(212, 150, 60, 0.75),
-      inset 0 1px 2px rgba(255, 255, 255, 0.95) !important;
-  }
-  #app.stage-spotlight-active .thedoor-card:not(:hover) {
-    opacity: 0.65 !important;
-    filter: brightness(0.88) saturate(85%) !important;
-    transform: scale(0.985) !important;
-    transition: opacity 0.35s ease, filter 0.35s ease, transform 0.35s ease !important;
-  }
 
-  /* Top Social Handle Credentials Image Container */
-  .client-handle-banner {
-    position: relative;
+  .thedoor-photo-link {
+    display: block;
     width: 100%;
+    text-decoration: none;
+    border-radius: 2px;
+    overflow: hidden;
     background: #0d0a08;
-    border: 1px solid rgba(180, 130, 60, 0.32);
-    overflow: hidden;
-    margin-bottom: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 4px;
-    z-index: 3;
-    flex-shrink: 0;
+    box-shadow: 
+      0 16px 36px -6px rgba(45, 30, 15, 0.26),
+      0 4px 14px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    transition: transform 0.35s cubic-bezier(0.2, 0.85, 0.25, 1), box-shadow 0.35s ease;
   }
-  .thedoor-card.is-hero .client-handle-banner {
-    height: 48px;
-    margin-bottom: 6px;
+  .thedoor-photo-link:hover {
+    transform: translateY(-3px) scale(1.008);
+    box-shadow: 
+      0 22px 46px -6px rgba(45, 30, 15, 0.36),
+      0 6px 18px rgba(0, 0, 0, 0.14);
   }
-  .thedoor-card:not(.is-hero) .client-handle-banner {
-    height: 32px;
-    margin-bottom: 3px;
-  }
-  .client-handle-banner img {
+
+  .thedoor-photo {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: left center;
+    height: auto;
     display: block;
-    transition: transform 0.35s ease;
-  }
-  .thedoor-card:hover .client-handle-banner img {
-    transform: scale(1.02);
-  }
-
-  .client-header-bar {
-    position: relative;
-    z-index: 4;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 3px;
-    gap: 8px;
-    flex-shrink: 0;
-  }
-  .thedoor-card.is-hero .client-name {
-    font-family: var(--serif-display);
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--ink-espresso);
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-  }
-  .thedoor-card:not(.is-hero) .client-name {
-    font-family: var(--serif-display);
-    font-size: 13.5px;
-    font-weight: 600;
-    color: var(--ink-espresso);
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-  }
-  .client-highlight-badge {
-    font-family: var(--sans);
-    font-size: 8px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    color: var(--brass-accent);
-    background: rgba(180, 115, 45, 0.12);
-    border: 1px solid rgba(180, 115, 45, 0.3);
-    padding: 1.5px 5.5px;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  .client-body {
-    position: relative;
-    z-index: 4;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 3px;
-    font-size: 11px;
-    line-height: 1.35;
-    color: var(--ink-charcoal);
-    min-height: 0;
-  }
-  .client-stat-row {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-  }
-  .client-stat-title {
-    font-family: var(--sans);
-    font-size: 8.5px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-espresso);
-  }
-  .thedoor-card.is-hero .client-stat-desc {
-    font-family: var(--serif-body);
-    font-size: 11.5px;
-    color: var(--ink-muted);
-  }
-  .thedoor-card:not(.is-hero) .client-stat-desc {
-    font-family: var(--serif-body);
-    font-size: 10.5px;
-    color: var(--ink-muted);
-  }
-  .client-metrics-pills {
-    display: flex;
-    gap: 4px;
-    margin-top: 1.5px;
-    flex-wrap: wrap;
-  }
-  .metric-pill-chip {
-    font-family: var(--sans);
-    font-size: 8px;
-    font-weight: 700;
-    color: #3F5A3D;
-    background: rgba(63, 90, 61, 0.12);
-    border: 1px solid rgba(63, 90, 61, 0.28);
-    padding: 1px 4.5px;
-  }
-
-  /* Photoshoot Box for Firehook */
-  .photoshoot-box {
-    margin-top: 5px;
-    background: rgba(236, 226, 212, 0.6);
-    border: 1px solid rgba(180, 120, 50, 0.32);
-    padding: 5px 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    flex-shrink: 0;
-  }
-  .photoshoot-text {
-    flex: 1;
-    font-family: var(--serif-body);
-    font-size: 11px;
-    font-style: italic;
-    color: var(--ink-espresso);
-    line-height: 1.25;
-  }
-  .photoshoot-thumbs-wrap {
-    display: flex;
-    gap: 6px;
-    flex-shrink: 0;
-  }
-  .photoshoot-thumb {
-    width: 48px;
-    height: 48px;
-    border: 1px solid rgba(180, 115, 45, 0.45);
-    background: #EDE4D6;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.12);
-  }
-  .photoshoot-thumb img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    display: block;
-    transition: transform 0.25s ease;
-  }
-  .photoshoot-thumb:hover img {
-    transform: scale(1.15);
+    object-position: left center;
   }
 
-  /* Embed Triggers Bar */
-  .embed-triggers-bar {
-    position: relative;
-    z-index: 4;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    margin-top: 3px;
-    padding-top: 3px;
-    border-top: 1px dashed rgba(180, 120, 50, 0.22);
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    flex-shrink: 0;
+  .thedoor-caption {
+    padding: 0 4px;
+    margin-top: 2px;
   }
-  .embed-triggers-bar::-webkit-scrollbar {
-    display: none;
-  }
-  .embed-label-tag {
-    font-family: var(--sans);
-    font-size: 7.5px;
+
+  .thedoor-client-name {
+    font-family: var(--serif-display);
+    font-size: 15px;
     font-weight: 700;
-    letter-spacing: 0.08em;
-    color: var(--ink-muted);
-    flex-shrink: 0;
+    color: #1A120B;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    margin-bottom: 2px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9), 0 0 6px rgba(255, 252, 246, 0.8);
   }
-  .embed-pill-btn {
+
+  .thedoor-client-copy {
+    font-family: var(--serif-body);
+    font-size: 13px;
+    line-height: 1.45;
+    color: #261E16;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9), 0 0 6px rgba(255, 252, 246, 0.8);
+  }
+
+  .thedoor-insta-link {
     font-family: var(--sans);
-    font-size: 7.5px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.04em;
-    color: #4A3319;
-    background: rgba(255, 255, 255, 0.82);
-    border: 1px solid rgba(180, 115, 45, 0.35);
-    padding: 1.5px 4.5px;
-    border-radius: 2px;
+    color: #8C4B00;
+    text-decoration: none;
+    margin-left: 6px;
+    white-space: nowrap;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
     display: inline-flex;
     align-items: center;
-    gap: 2px;
-    transition: all 0.2s ease;
-    cursor: pointer;
-    text-transform: uppercase;
-    white-space: nowrap;
-    flex-shrink: 0;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
   }
-  .embed-pill-btn:hover {
-    background: rgba(180, 115, 45, 0.18);
-    border-color: rgba(180, 115, 45, 0.7);
-    color: #231608;
-    transform: translateY(-1px);
-  }
-  .embed-pill-btn.is-active {
-    background: rgba(180, 115, 45, 0.9);
-    color: #FAF7F2;
-    border-color: #8C5A24;
+  .thedoor-insta-link:hover {
+    color: #1A120B;
+    text-decoration: underline;
   }
 
   /* ========== FROSTED VINTAGE GLASSMORPHISM CARD STYLING ========== */
@@ -1602,80 +1416,32 @@ window.__IMG__ = {
       summary: 'Strategic influencer seeding, VIP event activations, and high-engagement social content direction across premier culinary & lifestyle brands.',
       clients: [
         {
-          id: 'firehook',
-          num: '01',
-          name: 'Firehook Bakery',
-          role: 'Artisanal Crackers & Mediterranean Bakery',
-          handleImg: IMG.thedoor.firehook,
-          highlight: '8.18M+ REACH',
-          stats: [
-            {
-              title: 'Mailer by the numbers',
-              desc: 'Selected 100+ influencers to receive a special mailer and event invitations.',
-              metrics: ['80+ Total Recipients', '8.18M+ Est. Social Reach'],
-              embedUrl: 'https://www.instagram.com/p/DRShDqnEXUA/?img_index=1',
-              embedLabel: 'Mailer Drop Post'
-            },
-            {
-              title: 'Event by the numbers',
-              desc: 'Curated VIP influencer invitations and experiential brand tasting.',
-              metrics: ['50+ Total Guests', '5.8M+ Est. Combined Reach'],
-              embedUrl: 'https://www.instagram.com/p/DRkm063EouO/?img_index=2',
-              embedLabel: 'Event Tasting Post'
-            }
-          ],
-          photoshoot: {
-            title: 'Promotional photoshoot of 10 concepts with live client feedback',
-            img1: IMG.thedoor.pts1,
-            label1: 'Live Client Feedback Review',
-            img2: IMG.thedoor.pts2,
-            label2: 'Hero Promotional Still'
-          },
-          embeds: [
-            { url: 'https://www.instagram.com/p/DRShDqnEXUA/?img_index=1', label: 'Mailer Post (8.18M Reach)', shortLabel: 'Mailer (8.18M)', likes: '8.18M Reach' },
-            { url: 'https://www.instagram.com/p/DRkm063EouO/?img_index=2', label: 'Event Post (5.8M Reach)', shortLabel: 'Event (5.8M)', likes: '5.8M Reach' }
-          ]
+          id: 'carbone',
+          name: 'Carbone Fine Food',
+          img: IMG.thedoor.carbone,
+          copy: 'Selected 100+ influencers for VIP event activations & exclusive mailers.',
+          link: 'https://www.instagram.com/p/DP43pPKkhH5/'
         },
         {
-          id: 'carbone',
-          num: '02',
-          name: 'Carbone Fine Food',
-          role: 'Luxury Italian Pasta Sauces & Pantry',
-          handleImg: IMG.thedoor.carbone,
-          highlight: '22.1K+ LIKES',
-          action: 'Selected 100+ influencers to receive a special mailer and event invitations.',
-          embeds: [
-            { url: 'https://www.instagram.com/p/DP43pPKkhH5/', label: 'Post 1 (22.1K likes)', shortLabel: 'Post 1 (22.1K)', likes: '22.1K likes' },
-            { url: 'https://www.instagram.com/p/DQk8_8BCePF/', label: 'Post 2 (Influencer Drop)', shortLabel: 'Post 2' },
-            { url: 'https://www.instagram.com/p/DQ9xFDyDsWH/', label: 'Post 3 (Culinary Pairing)', shortLabel: 'Post 3' }
-          ]
+          id: 'firehook',
+          name: 'Firehook Bakery',
+          img: IMG.thedoor.firehook,
+          copy: '80+ Mailers | 50+ Event Guests | 70+ Social Placements. Generated 13.9M+ combined estimated social reach. Directed 10-concept promotional photoshoot.',
+          link: 'https://www.instagram.com/p/DRShDqnEXUA/?img_index=1'
         },
         {
           id: 'citarella',
-          num: '03',
-          name: 'Citarella Gourmet Market',
-          role: 'Iconic NYC Gourmet Food & Seafood',
-          handleImg: IMG.thedoor.citarella,
-          highlight: '12 DAYS CAMPAIGN',
-          campaign: 'Created 12 individual influencer briefs for the iconic 12 Days of Christmas.',
-          embeds: [
-            { url: 'https://www.instagram.com/p/DSLYuvjkncj/', label: 'Post 1 (4.3K likes)', shortLabel: 'Post 1 (4.3K)', likes: '4.3K likes' },
-            { url: 'https://www.instagram.com/p/DSS7pEVkr4A/', label: 'Post 2 (1.1K likes)', shortLabel: 'Post 2 (1.1K)', likes: '1.1K likes' },
-            { url: 'https://www.instagram.com/p/DSD-KiYDfZe/', label: 'Post 3 (1.0K likes)', shortLabel: 'Post 3 (1.0K)', likes: '1.0K likes' }
-          ]
+          name: 'Citarella',
+          img: IMG.thedoor.citarella,
+          copy: 'Curated individual influencer briefs for the iconic 12 Days of Christmas campaign.',
+          link: 'https://www.instagram.com/p/DSLYuvjkncj/'
         },
         {
           id: 'rachael',
-          num: '04',
           name: 'Rachael Ray',
-          role: 'Celebrity Chef & Media Personality',
-          handleImg: IMG.thedoor.rachael,
-          highlight: '2.9× BENCHMARK',
-          metrics: 'Produced content for Rachael Ray (1.6M+ followers) that achieved 2.9× benchmark engagement.',
-          action: 'Content creation focusing on auto-play videos and auto-swipe image carousels.',
-          embeds: [
-            { url: 'https://www.instagram.com/p/DQh9zh8jz5C/?img_index=5', label: 'Post 1 (6.1K likes • 2.9×)', shortLabel: 'Post 1 (6.1K • 2.9×)', likes: '6.1K likes' }
-          ]
+          img: IMG.thedoor.rachael,
+          copy: '(1.6M+ Followers). Produced auto-play video & carousel content achieving 2.9× benchmark engagement.',
+          link: 'https://www.instagram.com/p/DQh9zh8jz5C/?img_index=5'
         }
       ]
     },
@@ -1964,7 +1730,7 @@ window.__IMG__ = {
     if (cat.kind === 'about') {
       renderAboutSection(cat);
     } else if (cat.key === 'thedoor') {
-      renderTheDoorGrid(cat);
+      renderTheDoorMinimal(cat);
     } else {
       renderWorkGrid(cat);
     }
@@ -2231,436 +1997,59 @@ window.__IMG__ = {
     }
   }
 
-  /* ========== THE DOOR 4-CLIENT BENTO GRID RENDERER ========== */
-  function renderTheDoorGrid(cat) {
-    var grid = document.createElement('div');
-    grid.className = 'thedoor-grid';
+  /* ========== THE DOOR: HYPER-MINIMAL VISUAL-FIRST EDITORIAL RENDERER ========== */
+  function renderTheDoorMinimal(cat) {
+    var feed = document.createElement('div');
+    feed.className = 'thedoor-feed';
 
-    cat.clients.forEach(function(client, i) {
-      var card = document.createElement('div');
-      card.className = 'thedoor-card' + (client.id === 'firehook' ? ' is-hero' : '');
+    cat.clients.forEach(function(client) {
+      var item = document.createElement('div');
+      item.className = 'thedoor-item';
 
-      // Oversized Editorial Watermark (Vogue Magazine Spread)
-      var watermark = document.createElement('div');
-      watermark.className = 'editorial-watermark';
-      watermark.setAttribute('aria-hidden', 'true');
-      watermark.textContent = client.num;
-      card.appendChild(watermark);
+      // 1. Massive Clean Image Placeholder (Physical photo resting directly on the leaf)
+      var photoLink = document.createElement('a');
+      photoLink.href = client.link;
+      photoLink.target = '_blank';
+      photoLink.rel = 'noopener noreferrer';
+      photoLink.className = 'thedoor-photo-link';
+      photoLink.title = 'Open ' + client.name + ' on Instagram';
 
-      var innerF = document.createElement('div');
-      innerF.className = 'card-inner-frame';
-      card.appendChild(innerF);
-      injectCorners(card);
+      var img = document.createElement('img');
+      img.src = client.img;
+      img.alt = client.name;
+      img.loading = 'lazy';
+      img.className = 'thedoor-photo';
+      photoLink.appendChild(img);
+      item.appendChild(photoLink);
 
-      // 1. Social Handle Header Screenshot
-      var handleBanner = document.createElement('div');
-      handleBanner.className = 'client-handle-banner';
-      var handleImg = document.createElement('img');
-      handleImg.src = client.handleImg;
-      handleImg.alt = client.name + ' Social Handle Credentials';
-      handleImg.loading = 'lazy';
-      handleBanner.appendChild(handleImg);
-      card.appendChild(handleBanner);
+      // 2. Tiny, elegant caption directly underneath
+      var caption = document.createElement('div');
+      caption.className = 'thedoor-caption';
 
-      // 2. Client Header Bar
-      var headerBar = document.createElement('div');
-      headerBar.className = 'client-header-bar';
+      var clientName = document.createElement('h3');
+      clientName.className = 'thedoor-client-name';
+      clientName.textContent = client.name;
+      caption.appendChild(clientName);
 
-      var titleEl = document.createElement('h3');
-      titleEl.className = 'client-name';
-      titleEl.textContent = client.name;
-      headerBar.appendChild(titleEl);
+      var copyP = document.createElement('p');
+      copyP.className = 'thedoor-client-copy';
+      copyP.textContent = client.copy + ' ';
 
-      var badge = document.createElement('span');
-      badge.className = 'client-highlight-badge';
-      badge.textContent = client.highlight;
-      headerBar.appendChild(badge);
+      var instaLink = document.createElement('a');
+      instaLink.href = client.link;
+      instaLink.target = '_blank';
+      instaLink.rel = 'noopener noreferrer';
+      instaLink.className = 'thedoor-insta-link';
+      instaLink.textContent = '[↗ Visit Instagram]';
+      copyP.appendChild(instaLink);
 
-      card.appendChild(headerBar);
+      caption.appendChild(copyP);
+      item.appendChild(caption);
 
-      // 3. Client Body
-      var bodyEl = document.createElement('div');
-      bodyEl.className = 'client-body';
-
-      if (client.id === 'firehook') {
-        // Stats
-        client.stats.forEach(function(st) {
-          var sRow = document.createElement('div');
-          sRow.className = 'client-stat-row';
-          var stTitle = document.createElement('div');
-          stTitle.className = 'client-stat-title';
-          stTitle.textContent = '★ ' + st.title;
-          var stDesc = document.createElement('div');
-          stDesc.className = 'client-stat-desc';
-          stDesc.textContent = st.desc;
-          var pillsWrap = document.createElement('div');
-          pillsWrap.className = 'client-metrics-pills';
-          st.metrics.forEach(function(m) {
-            var chip = document.createElement('span');
-            chip.className = 'metric-pill-chip';
-            chip.textContent = m;
-            pillsWrap.appendChild(chip);
-          });
-          sRow.appendChild(stTitle);
-          sRow.appendChild(stDesc);
-          sRow.appendChild(pillsWrap);
-          bodyEl.appendChild(sRow);
-        });
-
-        // Dedicated Photoshoot Container
-        var psBox = document.createElement('div');
-        psBox.className = 'photoshoot-box';
-        var psText = document.createElement('div');
-        psText.className = 'photoshoot-text';
-        psText.textContent = '📷 ' + client.photoshoot.title;
-
-        var thumbsWrap = document.createElement('div');
-        thumbsWrap.className = 'photoshoot-thumbs-wrap';
-
-        var th1 = document.createElement('div');
-        th1.className = 'photoshoot-thumb';
-        th1.title = client.photoshoot.label1;
-        var im1 = document.createElement('img');
-        im1.src = client.photoshoot.img1;
-        im1.alt = client.photoshoot.label1;
-        th1.appendChild(im1);
-        th1.addEventListener('click', function(e) {
-          e.stopPropagation();
-          openTheDoorTheater(client, 0, 'photo');
-        });
-
-        var th2 = document.createElement('div');
-        th2.className = 'photoshoot-thumb';
-        th2.title = client.photoshoot.label2;
-        var im2 = document.createElement('img');
-        im2.src = client.photoshoot.img2;
-        im2.alt = client.photoshoot.label2;
-        th2.appendChild(im2);
-        th2.addEventListener('click', function(e) {
-          e.stopPropagation();
-          openTheDoorTheater(client, 1, 'photo');
-        });
-
-        thumbsWrap.appendChild(th1);
-        thumbsWrap.appendChild(th2);
-        psBox.appendChild(psText);
-        psBox.appendChild(thumbsWrap);
-        bodyEl.appendChild(psBox);
-
-      } else if (client.id === 'carbone') {
-        var aRow = document.createElement('div');
-        aRow.className = 'client-stat-row';
-        var aDesc = document.createElement('div');
-        aDesc.className = 'client-stat-desc';
-        aDesc.style.fontSize = '11px';
-        aDesc.style.lineHeight = '1.35';
-        aDesc.textContent = client.action;
-        aRow.appendChild(aDesc);
-        bodyEl.appendChild(aRow);
-
-      } else if (client.id === 'citarella') {
-        var cRow = document.createElement('div');
-        cRow.className = 'client-stat-row';
-        var cDesc = document.createElement('div');
-        cDesc.className = 'client-stat-desc';
-        cDesc.style.fontSize = '11px';
-        cDesc.style.lineHeight = '1.35';
-        cDesc.textContent = client.campaign;
-        cRow.appendChild(cDesc);
-        bodyEl.appendChild(cRow);
-
-      } else if (client.id === 'rachael') {
-        var rRow = document.createElement('div');
-        rRow.className = 'client-stat-row';
-        var rDesc = document.createElement('div');
-        rDesc.className = 'client-stat-desc';
-        rDesc.style.fontSize = '10.5px';
-        rDesc.style.lineHeight = '1.3';
-        rDesc.textContent = client.metrics;
-        var rAct = document.createElement('div');
-        rAct.className = 'client-stat-desc';
-        rAct.style.fontSize = '10.5px';
-        rAct.style.lineHeight = '1.3';
-        rAct.style.marginTop = '2px';
-        rAct.textContent = client.action;
-        rRow.appendChild(rDesc);
-        rRow.appendChild(rAct);
-        bodyEl.appendChild(rRow);
-      }
-
-      card.appendChild(bodyEl);
-
-      // 4. Instagram Embed Trigger Pill Bar
-      var triggersBar = document.createElement('div');
-      triggersBar.className = 'embed-triggers-bar';
-
-      var tLabel = document.createElement('span');
-      tLabel.className = 'embed-label-tag';
-      tLabel.textContent = 'INSTAGRAM:';
-      triggersBar.appendChild(tLabel);
-
-      client.embeds.forEach(function(emb, eIdx) {
-        var btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'embed-pill-btn';
-        btn.innerHTML = '📷 ' + (emb.shortLabel || emb.label) + ' <span style="opacity:0.6;">↗</span>';
-        btn.title = 'View live embedded post: ' + emb.label;
-        btn.addEventListener('click', function(ev) {
-          ev.stopPropagation();
-          openTheDoorTheater(client, eIdx, 'embed');
-        });
-        triggersBar.appendChild(btn);
-      });
-
-      card.appendChild(triggersBar);
-
-      // Dynamic Lighting: Spotlight effect on hover
-      card.addEventListener('mouseenter', function() {
-        var appEl = document.getElementById('app');
-        if (appEl) appEl.classList.add('stage-spotlight-active');
-      });
-      card.addEventListener('mouseleave', function() {
-        var appEl = document.getElementById('app');
-        if (appEl) appEl.classList.remove('stage-spotlight-active');
-      });
-
-      // Card click opens theater with first post
-      card.addEventListener('click', function() {
-        openTheDoorTheater(client, 0, 'embed');
-      });
-
-      grid.appendChild(card);
+      feed.appendChild(item);
     });
 
-    galleryBody.appendChild(grid);
-
-    // Trigger Instagram embed processing
-    if (window.instgrm && window.instgrm.Embeds) {
-      window.instgrm.Embeds.process();
-    }
-  }
-
-  /* Open The Door Client in Expanded Theater View */
-  function openTheDoorTheater(client, activeIdx, initialMode) {
-    activeCampaignId = 'thedoor_' + client.id;
-    theaterTitle.textContent = client.name + ' — Influencer & Social Strategy';
-    theaterCounter.textContent = 'THE DOOR CLIENT ' + client.num + ' / 04';
-
-    // Populate notes drawer
-    theaterNotesDrawer.classList.remove('is-open');
-    modalInsight.textContent = client.role;
-    modalChallenge.textContent = client.action || (client.stats ? client.stats[0].desc : client.campaign || client.metrics);
-    modalStrategy.textContent = client.campaign || (client.stats ? client.stats[1].desc : client.metrics);
-    modalPdfBtn.href = client.embeds[0].url;
-    modalPdfBtn.textContent = 'Open on Instagram ↗';
-
-    // Clear viewport and populate with Instagram Embed & Photoshoot Theater
-    theaterViewport.innerHTML = '';
-    theaterThumbTrack.innerHTML = '';
-
-    var wrap = document.createElement('div');
-    wrap.style.display = 'flex';
-    wrap.style.width = '100%';
-    wrap.style.height = '100%';
-    wrap.style.gap = '20px';
-    wrap.style.padding = '10px 16px';
-    wrap.style.alignItems = 'stretch';
-    wrap.style.overflowY = 'auto';
-
-    // Left column: Client Details, Brand Banner & Photoshoot
-    var leftCol = document.createElement('div');
-    leftCol.style.flex = '1';
-    leftCol.style.minWidth = '280px';
-    leftCol.style.maxWidth = '420px';
-    leftCol.style.display = 'flex';
-    leftCol.style.flexDirection = 'column';
-    leftCol.style.gap = '12px';
-
-    var bannerWrap = document.createElement('div');
-    bannerWrap.style.border = '1px solid rgba(180, 130, 60, 0.35)';
-    bannerWrap.style.background = '#EDE4D6';
-    bannerWrap.style.overflow = 'hidden';
-    var bImg = document.createElement('img');
-    bImg.src = client.handleImg;
-    bImg.style.width = '100%';
-    bImg.style.display = 'block';
-    bannerWrap.appendChild(bImg);
-    leftCol.appendChild(bannerWrap);
-
-    var infoCard = document.createElement('div');
-    infoCard.style.background = 'rgba(253, 250, 244, 0.8)';
-    infoCard.style.border = '1px solid rgba(190, 135, 65, 0.35)';
-    infoCard.style.padding = '12px 14px';
-    infoCard.style.display = 'flex';
-    infoCard.style.flexDirection = 'column';
-    infoCard.style.gap = '8px';
-
-    var cName = document.createElement('h3');
-    cName.style.fontFamily = 'var(--serif-display)';
-    cName.style.fontSize = '18px';
-    cName.style.color = 'var(--ink-espresso)';
-    cName.textContent = client.name;
-    infoCard.appendChild(cName);
-
-    if (client.highlight) {
-      var hTag = document.createElement('div');
-      hTag.className = 'client-highlight-badge';
-      hTag.style.alignSelf = 'flex-start';
-      hTag.textContent = client.highlight;
-      infoCard.appendChild(hTag);
-    }
-
-    if (client.stats) {
-      client.stats.forEach(function(s) {
-        var sBlock = document.createElement('div');
-        sBlock.style.fontSize = '12px';
-        sBlock.innerHTML = '<strong style="font-family:var(--sans); font-size:10px; text-transform:uppercase; color:var(--ink-espresso);">' + s.title + '</strong><p style="color:var(--ink-muted); margin-top:2px;">' + s.desc + '</p>';
-        var chips = document.createElement('div');
-        chips.className = 'client-metrics-pills';
-        chips.style.marginTop = '4px';
-        s.metrics.forEach(function(m) {
-          chips.innerHTML += '<span class="metric-pill-chip">' + m + '</span>';
-        });
-        sBlock.appendChild(chips);
-        infoCard.appendChild(sBlock);
-      });
-    }
-
-    if (client.action) {
-      var aBlock = document.createElement('div');
-      aBlock.style.fontSize = '12px';
-      aBlock.innerHTML = '<strong style="font-family:var(--sans); font-size:10px; text-transform:uppercase; color:var(--ink-espresso);">Campaign Action</strong><p style="color:var(--ink-muted); margin-top:2px;">' + client.action + '</p>';
-      infoCard.appendChild(aBlock);
-    }
-
-    if (client.campaign) {
-      var cmpBlock = document.createElement('div');
-      cmpBlock.style.fontSize = '12px';
-      cmpBlock.innerHTML = '<strong style="font-family:var(--sans); font-size:10px; text-transform:uppercase; color:var(--ink-espresso);">12 Days Campaign Briefs</strong><p style="color:var(--ink-muted); margin-top:2px;">' + client.campaign + '</p>';
-      infoCard.appendChild(cmpBlock);
-    }
-
-    if (client.metrics) {
-      var mBlock = document.createElement('div');
-      mBlock.style.fontSize = '12px';
-      mBlock.innerHTML = '<strong style="font-family:var(--sans); font-size:10px; text-transform:uppercase; color:var(--ink-espresso);">Benchmark Performance</strong><p style="color:var(--ink-muted); margin-top:2px;">' + client.metrics + '</p>';
-      infoCard.appendChild(mBlock);
-    }
-
-    // If Firehook, add Photoshoot Visuals Section
-    if (client.photoshoot) {
-      var psSection = document.createElement('div');
-      psSection.style.borderTop = '1px solid rgba(190, 135, 65, 0.25)';
-      psSection.style.paddingTop = '8px';
-      psSection.innerHTML = '<strong style="font-family:var(--sans); font-size:10px; text-transform:uppercase; color:var(--ink-espresso);">📷 ' + client.photoshoot.title + '</strong>';
-      var psGrid = document.createElement('div');
-      psGrid.style.display = 'grid';
-      psGrid.style.gridTemplateColumns = '1fr 1fr';
-      psGrid.style.gap = '8px';
-      psGrid.style.marginTop = '6px';
-
-      var p1 = document.createElement('div');
-      p1.style.border = '1px solid rgba(180, 115, 45, 0.35)';
-      p1.style.overflow = 'hidden';
-      p1.innerHTML = '<img src="' + client.photoshoot.img1 + '" style="width:100%; height:110px; object-fit:cover; display:block;"><span style="display:block; font-size:9px; padding:3px; background:#EDE4D6; color:var(--ink-espresso); font-family:var(--sans);">' + client.photoshoot.label1 + '</span>';
-
-      var p2 = document.createElement('div');
-      p2.style.border = '1px solid rgba(180, 115, 45, 0.35)';
-      p2.style.overflow = 'hidden';
-      p2.innerHTML = '<img src="' + client.photoshoot.img2 + '" style="width:100%; height:110px; object-fit:cover; display:block;"><span style="display:block; font-size:9px; padding:3px; background:#EDE4D6; color:var(--ink-espresso); font-family:var(--sans);">' + client.photoshoot.label2 + '</span>';
-
-      psGrid.appendChild(p1);
-      psGrid.appendChild(p2);
-      psSection.appendChild(psGrid);
-      infoCard.appendChild(psSection);
-    }
-
-    leftCol.appendChild(infoCard);
-    wrap.appendChild(leftCol);
-
-    // Right column: Native Instagram Embed Widget Container
-    var rightCol = document.createElement('div');
-    rightCol.style.flex = '1.3';
-    rightCol.style.display = 'flex';
-    rightCol.style.flexDirection = 'column';
-    rightCol.style.background = 'rgba(255, 255, 255, 0.85)';
-    rightCol.style.border = '1px solid rgba(190, 135, 65, 0.35)';
-    rightCol.style.padding = '12px 16px';
-    rightCol.style.overflowY = 'auto';
-
-    // Tab Switcher for posts
-    var postNav = document.createElement('div');
-    postNav.style.display = 'flex';
-    postNav.style.alignItems = 'center';
-    postNav.style.gap = '8px';
-    postNav.style.marginBottom = '12px';
-    postNav.style.borderBottom = '1px solid rgba(180, 130, 60, 0.2)';
-    postNav.style.paddingBottom = '8px';
-    postNav.style.flexWrap = 'wrap';
-
-    var navLabel = document.createElement('span');
-    navLabel.style.fontFamily = 'var(--sans)';
-    navLabel.style.fontSize = '10px';
-    navLabel.style.fontWeight = '700';
-    navLabel.style.letterSpacing = '0.1em';
-    navLabel.style.color = 'var(--ink-espresso)';
-    navLabel.textContent = 'SELECT POST:';
-    postNav.appendChild(navLabel);
-
-    var embedDisplayArea = document.createElement('div');
-    embedDisplayArea.style.display = 'flex';
-    embedDisplayArea.style.justifyContent = 'center';
-    embedDisplayArea.style.width = '100%';
-
-    function displayPostEmbed(pIdx) {
-      var embObj = client.embeds[pIdx];
-      // Update pills
-      postNav.querySelectorAll('.embed-pill-btn').forEach(function(b, bi) {
-        b.classList.toggle('is-active', bi === pIdx);
-      });
-
-      // Embed standard Instagram blockquote
-      embedDisplayArea.innerHTML = '<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="' + embObj.url + '" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px auto; max-width:480px; min-width:320px; padding:0; width:99.375%;"><div style="padding:16px;"><a href="' + embObj.url + '" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">View post on Instagram (' + (embObj.label || '') + ')</a></div></blockquote>';
-
-      // Process embed script
-      if (window.instgrm && window.instgrm.Embeds) {
-        window.instgrm.Embeds.process();
-      }
-    }
-
-    client.embeds.forEach(function(emb, idx) {
-      var pBtn = document.createElement('button');
-      pBtn.type = 'button';
-      pBtn.className = 'embed-pill-btn' + (idx === activeIdx ? ' is-active' : '');
-      pBtn.textContent = '📷 ' + emb.label;
-      pBtn.addEventListener('click', function() {
-        displayPostEmbed(idx);
-      });
-      postNav.appendChild(pBtn);
-
-      // Thumbnail strip item
-      var tPill = document.createElement('div');
-      tPill.className = 'theater-thumb-pill' + (idx === activeIdx ? ' is-active' : '');
-      tPill.textContent = client.name + ' • ' + emb.label;
-      tPill.addEventListener('click', function() {
-        displayPostEmbed(idx);
-      });
-      theaterThumbTrack.appendChild(tPill);
-    });
-
-    rightCol.appendChild(postNav);
-    rightCol.appendChild(embedDisplayArea);
-    wrap.appendChild(rightCol);
-
-    theaterViewport.appendChild(wrap);
-
-    // Initial display
-    displayPostEmbed(activeIdx || 0);
-
-    // Open modal
-    caseModal.classList.add('is-open');
-    caseModal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
+    galleryBody.appendChild(feed);
   }
 
   /* ========== FULL ADJUSTABLE SCREEN PRESENTATION THEATER LOGIC ========== */
