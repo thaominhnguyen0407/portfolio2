@@ -298,27 +298,29 @@
     position: relative;
     z-index: 10;
     flex: 0 0 auto;
-    margin-bottom: 22px;
-    padding-top: 6px;
-    padding-bottom: 4px;
+    margin-bottom: 12px;
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
   .gallery-title {
     font-family: var(--serif-display);
-    font-size: clamp(26px, 2.6vw, 36px);
-    font-weight: 500;
-    color: var(--ink-espresso);
-    line-height: 1.05;
+    font-size: clamp(24px, 2.3vw, 32px);
+    font-weight: 600;
+    color: #1A1006;
+    line-height: 1.1;
     letter-spacing: -0.01em;
     margin-bottom: 2px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 12px rgba(250, 247, 242, 0.95);
   }
   .gallery-summary {
     font-family: var(--serif-body);
-    font-size: 14px;
+    font-size: 13.5px;
     font-style: italic;
-    color: var(--ink-muted);
+    color: #382717;
     line-height: 1.35;
-    max-width: 680px;
-    margin-bottom: 4px;
+    max-width: 720px;
+    margin-bottom: 3px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 10px rgba(250, 247, 242, 0.9);
   }
 
   .floral-divider {
@@ -352,19 +354,19 @@
     overflow: hidden;
   }
 
-  /* THE GIANT LOTUS STAGE ANCHOR (CENTERED DIRECTLY BEHIND GALLERY GRID) */
+  /* THE GIANT LOTUS STAGE ANCHOR (DELICATE BOTANICAL WATERMARK BEHIND STAGE) */
   .gallery-stage-anchor {
     position: absolute;
-    top: 52%;
+    top: 60%;
     left: 50%;
     transform: translate(-48%, -43%) rotate(-6deg);
-    width: clamp(720px, 58vw, 1020px);
-    height: clamp(720px, 58vw, 1020px);
+    width: clamp(660px, 52vw, 900px);
+    height: clamp(660px, 52vw, 900px);
     pointer-events: none;
     z-index: 1;
-    opacity: 0.78;
+    opacity: 0.18;
     transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.25, 1);
-    filter: drop-shadow(0 24px 50px rgba(45, 75, 40, 0.18));
+    filter: drop-shadow(0 16px 36px rgba(45, 75, 40, 0.08));
   }
   .stage-leaf-img {
     width: 100%;
@@ -373,205 +375,197 @@
     display: block;
   }
 
-  /* ========== THE DOOR: NATIVE INSTAGRAM EMBEDS EDITORIAL FEED ========== */
-  .thedoor-feed {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    height: 100%;
-    max-height: calc(100vh - 200px);
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 6px 18px 60px 6px;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(180, 130, 60, 0.32) transparent;
-  }
-  .thedoor-feed::-webkit-scrollbar {
-    width: 4px;
-  }
-  .thedoor-feed::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  .thedoor-feed::-webkit-scrollbar-thumb {
-    background: rgba(180, 130, 60, 0.32);
-    border-radius: 4px;
-  }
-  .thedoor-feed::-webkit-scrollbar-thumb:hover {
-    background: rgba(180, 130, 60, 0.65);
-  }
-
-  .thedoor-client-section {
-    display: flex;
-    flex-direction: column;
+  /* ========== THE DOOR: SIZED-DOWN 4-COLUMN NO-SCROLL EDITORIAL GRID ========== */
+  .thedoor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
     width: 100%;
+    height: 100%;
+    max-height: calc(100vh - 200px);
     position: relative;
-    z-index: 2;
+    z-index: 5;
+    overflow: hidden;
+    padding-bottom: 4px;
   }
 
-  /* Client Header: Name + (xx followers) + [↗ Visit Instagram] */
-  .thedoor-client-header {
+  .thedoor-col-card {
+    background: rgba(255, 253, 249, 0.96);
+    backdrop-filter: blur(16px) saturate(125%);
+    -webkit-backdrop-filter: blur(16px) saturate(125%);
+    border: 1px solid rgba(180, 130, 60, 0.36);
+    border-radius: 4px;
+    padding: 10px 9px 8px 9px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    padding: 0 4px;
+    height: 100%;
+    max-height: 485px;
+    box-shadow: 
+      0 6px 18px -3px rgba(60, 40, 20, 0.08),
+      0 1px 4px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  }
+  .thedoor-col-card:hover {
+    border-color: rgba(180, 130, 60, 0.65);
+    box-shadow: 
+      0 10px 24px -4px rgba(60, 40, 20, 0.12),
+      0 2px 8px rgba(0, 0, 0, 0.06);
   }
 
-  .thedoor-client-title-row {
+  .thedoor-card-header {
+    flex: 0 0 auto;
+    margin-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .thedoor-card-title {
+    font-family: var(--serif-display);
+    font-size: 14px;
+    font-weight: 700;
+    color: #1A120B;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .thedoor-card-meta {
     display: flex;
     align-items: baseline;
-    flex-wrap: wrap;
-    gap: 8px 12px;
+    justify-content: space-between;
+    gap: 4px;
+    margin-top: 1px;
   }
 
-  .thedoor-client-name {
-    font-family: var(--serif-display);
-    font-size: 19px;
-    font-weight: 700;
-    color: #1A120B;
-    letter-spacing: 0.02em;
-    line-height: 1.25;
-    margin: 0;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 252, 246, 0.85);
-  }
-
-  .thedoor-followers-tag {
+  .thedoor-card-followers {
     font-family: var(--serif-body);
     font-style: italic;
-    font-size: 13.5px;
+    font-size: 11.5px;
     font-weight: 600;
     color: #785A3C;
-    letter-spacing: 0.01em;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
+    white-space: nowrap;
   }
 
-  .thedoor-insta-link {
+  .thedoor-card-link {
     font-family: var(--sans);
-    font-size: 11.5px;
+    font-size: 10.5px;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     color: #8C4B00;
     text-decoration: none;
-    transition: color 0.2s ease, text-decoration 0.2s ease, transform 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
+    transition: color 0.18s ease, text-decoration 0.18s ease;
+    white-space: nowrap;
   }
-  .thedoor-insta-link:hover {
+  .thedoor-card-link:hover {
     color: #1A120B;
     text-decoration: underline;
-    transform: translateY(-1px);
   }
 
-  .thedoor-client-copy {
+  .thedoor-card-copy {
     font-family: var(--serif-body);
-    font-size: 13px;
-    line-height: 1.45;
-    color: #3A2B1E;
-    font-weight: 500;
-    margin: 2px 0 0 0;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9), 0 0 6px rgba(255, 252, 246, 0.8);
+    font-size: 11px;
+    line-height: 1.3;
+    color: #382717;
+    margin: 3px 0 6px 0;
+    height: 28px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
-  /* Multi-post selector pills */
-  .thedoor-pills-row {
+  /* Compact Post Pills */
+  .thedoor-card-pills {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    gap: 4px;
+    margin-bottom: 6px;
+    flex-shrink: 0;
     flex-wrap: wrap;
-    padding: 2px 4px 6px 4px;
+    min-height: 22px;
   }
 
-  .thedoor-post-pill {
+  .thedoor-pill-btn {
     appearance: none;
     -webkit-appearance: none;
-    background: rgba(255, 252, 246, 0.75);
+    background: rgba(255, 255, 255, 0.88);
     border: 1px solid rgba(180, 130, 60, 0.35);
-    border-radius: 20px;
-    padding: 4px 12px;
+    border-radius: 12px;
+    padding: 2px 7px;
     font-family: var(--sans);
-    font-size: 11px;
+    font-size: 9.5px;
     font-weight: 600;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
     color: #5A3A1C;
     cursor: pointer;
-    transition: all 0.22s cubic-bezier(0.2, 0.8, 0.25, 1);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    box-shadow: 0 1px 4px rgba(60, 40, 20, 0.06);
+    transition: all 0.18s ease;
+    white-space: nowrap;
   }
-  .thedoor-post-pill:hover {
-    background: rgba(255, 255, 255, 0.95);
-    border-color: rgba(180, 130, 60, 0.65);
+  .thedoor-pill-btn:hover {
+    background: #FFFFFF;
+    border-color: rgba(180, 130, 60, 0.7);
     color: #1A120B;
-    transform: translateY(-1px);
-    box-shadow: 0 3px 8px rgba(60, 40, 20, 0.1);
   }
-  .thedoor-post-pill.active {
+  .thedoor-pill-btn.active {
     background: #2A1D13;
     border-color: #2A1D13;
     color: #FAF6EF;
-    box-shadow: 0 3px 10px rgba(42, 29, 19, 0.25);
-  }
-  .thedoor-post-pill .pill-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: #8C4B00;
-    display: inline-block;
-    transition: background 0.2s ease;
-  }
-  .thedoor-post-pill.active .pill-dot {
-    background: #E8B878;
+    box-shadow: 0 1px 4px rgba(42, 29, 19, 0.25);
   }
 
-  /* Horizontal Snap Track for Instagram Embeds */
-  .thedoor-embeds-track {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    padding: 6px 4px 16px 4px;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(180, 130, 60, 0.28) transparent;
-    -webkit-overflow-scrolling: touch;
-  }
-  .thedoor-embeds-track::-webkit-scrollbar {
-    height: 4px;
-  }
-  .thedoor-embeds-track::-webkit-scrollbar-thumb {
-    background: rgba(180, 130, 60, 0.28);
-    border-radius: 4px;
-  }
-  .thedoor-embeds-track::-webkit-scrollbar-thumb:hover {
-    background: rgba(180, 130, 60, 0.6);
-  }
-
-  .thedoor-embed-card {
-    flex: 0 0 360px;
-    min-width: 326px;
-    max-width: 380px;
-    scroll-snap-align: start;
+  /* Embed Viewport & Slide Track */
+  .thedoor-card-viewport {
+    flex: 1;
+    width: 100%;
+    min-height: 310px;
+    max-height: 360px;
+    overflow: hidden;
     position: relative;
-    transition: transform 0.3s ease;
+    background: #FFFFFF;
+    border-radius: 3px;
+    border: 1px solid rgba(180, 130, 60, 0.2);
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.03);
   }
-  .thedoor-embed-card .instagram-media {
+
+  .thedoor-card-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.25, 1);
+  }
+
+  .thedoor-card-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .thedoor-scale-box {
+    width: 326px;
+    transform: scale(0.64);
+    transform-origin: top left;
+  }
+  .thedoor-scale-box .instagram-media {
     margin: 0 !important;
-    border-radius: 12px !important;
-    box-shadow: 
-      0 12px 28px -4px rgba(45, 30, 15, 0.16),
-      0 3px 10px rgba(0, 0, 0, 0.06) !important;
-    border: 1px solid rgba(255, 255, 255, 0.75) !important;
-    background: #FFFFFF !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    width: 326px !important;
+    min-width: 326px !important;
+    max-width: 326px !important;
   }
 
   /* ========== FROSTED VINTAGE GLASSMORPHISM CARD STYLING ========== */
   .work-card {
     position: relative;
-    background: rgba(252, 249, 242, 0.52);
+    background: rgba(255, 253, 249, 0.88);
     backdrop-filter: blur(14px) saturate(135%);
     -webkit-backdrop-filter: blur(14px) saturate(135%);
     border: 1px solid rgba(190, 135, 65, 0.38);
@@ -2174,137 +2168,140 @@ window.__IMG__ = {
   }
 
   function renderTheDoorEmbeds(cat) {
-    var feed = document.createElement('div');
-    feed.className = 'thedoor-feed';
+    var grid = document.createElement('div');
+    grid.className = 'thedoor-grid';
 
     cat.clients.forEach(function(client) {
-      var section = document.createElement('div');
-      section.className = 'thedoor-client-section';
+      var col = document.createElement('div');
+      col.className = 'thedoor-col-card';
 
-      // 1. Client Header: Name + (xx followers) + [↗ Visit Instagram]
+      // 1. Header: Name + (xx followers) + [↗ Visit Instagram]
       var header = document.createElement('div');
-      header.className = 'thedoor-client-header';
+      header.className = 'thedoor-card-header';
 
-      var titleRow = document.createElement('div');
-      titleRow.className = 'thedoor-client-title-row';
+      var titleEl = document.createElement('h4');
+      titleEl.className = 'thedoor-card-title';
+      titleEl.textContent = client.name;
+      titleEl.title = client.name;
+      header.appendChild(titleEl);
 
-      var nameEl = document.createElement('h3');
-      nameEl.className = 'thedoor-client-name';
-      nameEl.textContent = client.name;
-      titleRow.appendChild(nameEl);
+      var metaRow = document.createElement('div');
+      metaRow.className = 'thedoor-card-meta';
 
       var followersEl = document.createElement('span');
-      followersEl.className = 'thedoor-followers-tag';
+      followersEl.className = 'thedoor-card-followers';
       followersEl.textContent = '(' + client.followers + ')';
-      titleRow.appendChild(followersEl);
+      metaRow.appendChild(followersEl);
 
       var profileLink = document.createElement('a');
       profileLink.href = client.profileUrl;
       profileLink.target = '_blank';
       profileLink.rel = 'noopener noreferrer';
-      profileLink.className = 'thedoor-insta-link';
+      profileLink.className = 'thedoor-card-link';
       profileLink.textContent = '[↗ Visit Instagram]';
       profileLink.title = 'Open ' + client.name + ' on Instagram';
-      titleRow.appendChild(profileLink);
+      metaRow.appendChild(profileLink);
 
-      header.appendChild(titleRow);
+      header.appendChild(metaRow);
 
       if (client.copy) {
-        var copyP = document.createElement('p');
-        copyP.className = 'thedoor-client-copy';
-        copyP.textContent = client.copy;
-        header.appendChild(copyP);
+        var copyEl = document.createElement('p');
+        copyEl.className = 'thedoor-card-copy';
+        copyEl.textContent = client.copy;
+        copyEl.title = client.copy;
+        header.appendChild(copyEl);
       }
 
-      section.appendChild(header);
+      col.appendChild(header);
 
-      // 2. Multi-post selector pills (if more than 1 post)
+      // 2. Post Selector Pills (if multiple posts)
       var track = document.createElement('div');
-      track.className = 'thedoor-embeds-track';
+      track.className = 'thedoor-card-track';
 
       if (client.posts && client.posts.length > 1) {
         var pillsRow = document.createElement('div');
-        pillsRow.className = 'thedoor-pills-row';
+        pillsRow.className = 'thedoor-card-pills';
 
         client.posts.forEach(function(post, pIdx) {
-          var pill = document.createElement('button');
-          pill.type = 'button';
-          pill.className = 'thedoor-post-pill' + (pIdx === 0 ? ' active' : '');
-          pill.setAttribute('data-target', post.id);
+          var pillBtn = document.createElement('button');
+          pillBtn.type = 'button';
+          pillBtn.className = 'thedoor-pill-btn' + (pIdx === 0 ? ' active' : '');
+          pillBtn.textContent = post.badge || ('Post ' + (pIdx + 1));
+          pillBtn.title = post.label || post.badge;
 
-          var dot = document.createElement('span');
-          dot.className = 'pill-dot';
-          pill.appendChild(dot);
-
-          var pillText = document.createTextNode(' ' + post.label);
-          pill.appendChild(pillText);
-
-          pill.addEventListener('click', function() {
-            var targetCard = track.querySelector('#' + post.id);
-            if (targetCard) {
-              targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-            }
-            pillsRow.querySelectorAll('.thedoor-post-pill').forEach(function(p) {
-              p.classList.remove('active');
+          pillBtn.addEventListener('click', function() {
+            pillsRow.querySelectorAll('.thedoor-pill-btn').forEach(function(b) {
+              b.classList.remove('active');
             });
-            pill.classList.add('active');
+            pillBtn.classList.add('active');
+            track.style.transform = 'translateX(-' + (pIdx * 100) + '%)';
           });
 
-          pillsRow.appendChild(pill);
+          pillsRow.appendChild(pillBtn);
         });
 
-        section.appendChild(pillsRow);
+        col.appendChild(pillsRow);
+      } else {
+        var pillSpacer = document.createElement('div');
+        pillSpacer.className = 'thedoor-card-pills';
+        if (client.posts && client.posts[0]) {
+          var singleBadge = document.createElement('span');
+          singleBadge.className = 'thedoor-pill-btn active';
+          singleBadge.style.cursor = 'default';
+          singleBadge.textContent = client.posts[0].badge || 'Post 1';
+          pillSpacer.appendChild(singleBadge);
+        }
+        col.appendChild(pillSpacer);
       }
 
-      // 3. Instagram Embed Cards inside Track
+      // 3. Viewport & Scale Box for Embeds
+      var viewport = document.createElement('div');
+      viewport.className = 'thedoor-card-viewport';
+
       if (client.posts && client.posts.length > 0) {
         client.posts.forEach(function(post) {
-          var card = document.createElement('div');
-          card.className = 'thedoor-embed-card';
-          card.id = post.id;
+          var slide = document.createElement('div');
+          slide.className = 'thedoor-card-slide';
+
+          var scaleBox = document.createElement('div');
+          scaleBox.className = 'thedoor-scale-box';
 
           var bq = document.createElement('blockquote');
           bq.className = 'instagram-media';
           bq.setAttribute('data-instgrm-permalink', post.url);
           bq.setAttribute('data-instgrm-version', '14');
-          bq.style.background = '#FFFFFF';
-          bq.style.border = '0';
-          bq.style.borderRadius = '12px';
-          bq.style.boxShadow = '0 10px 26px -4px rgba(45,30,15,0.18), 0 2px 8px rgba(0,0,0,0.06)';
-          bq.style.margin = '0 auto';
-          bq.style.maxWidth = '380px';
+          bq.style.width = '326px';
           bq.style.minWidth = '326px';
-          bq.style.padding = '0';
-          bq.style.width = '100%';
-
-          var fallbackDiv = document.createElement('div');
-          fallbackDiv.style.padding = '24px 16px';
-          fallbackDiv.style.textAlign = 'center';
+          bq.style.margin = '0';
+          bq.style.background = '#FFFFFF';
 
           var fallbackA = document.createElement('a');
           fallbackA.href = post.url;
           fallbackA.target = '_blank';
           fallbackA.rel = 'noopener noreferrer';
+          fallbackA.style.display = 'block';
+          fallbackA.style.padding = '36px 12px';
+          fallbackA.style.textAlign = 'center';
           fallbackA.style.fontFamily = 'var(--sans)';
-          fallbackA.style.fontSize = '12px';
-          fallbackA.style.fontWeight = '600';
+          fallbackA.style.fontSize = '11px';
           fallbackA.style.color = '#8C4B00';
           fallbackA.style.textDecoration = 'none';
           fallbackA.textContent = '↗ View ' + (post.badge || 'Post') + ' on Instagram';
 
-          fallbackDiv.appendChild(fallbackA);
-          bq.appendChild(fallbackDiv);
-          card.appendChild(bq);
-          track.appendChild(card);
+          bq.appendChild(fallbackA);
+          scaleBox.appendChild(bq);
+          slide.appendChild(scaleBox);
+          track.appendChild(slide);
         });
-
-        section.appendChild(track);
       }
 
-      feed.appendChild(section);
+      viewport.appendChild(track);
+      col.appendChild(viewport);
+
+      grid.appendChild(col);
     });
 
-    galleryBody.appendChild(feed);
+    galleryBody.appendChild(grid);
   }
 
   /* ========== FULL ADJUSTABLE SCREEN PRESENTATION THEATER LOGIC ========== */
