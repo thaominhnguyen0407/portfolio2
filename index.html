@@ -562,6 +562,195 @@
     max-width: 326px !important;
   }
 
+  /* ========== OGILVY: SOCIAL STRATEGY INTERN EDITORIAL GRID ========== */
+  .ogilvy-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    max-height: calc(100vh - 200px);
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+  }
+
+  .ogilvy-channels-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: rgba(255, 253, 249, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(180, 130, 60, 0.35);
+    border-radius: 4px;
+    padding: 5px 12px;
+    box-shadow: 0 2px 6px rgba(60, 40, 20, 0.05);
+    flex-shrink: 0;
+  }
+
+  .ogilvy-channels-label {
+    font-family: var(--serif-display);
+    font-size: 12px;
+    font-weight: 700;
+    color: #1A120B;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+
+  .ogilvy-channels-list {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .ogilvy-chan-pill {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #4A321E;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(180, 130, 60, 0.32);
+    border-radius: 14px;
+    padding: 2px 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.18s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    white-space: nowrap;
+  }
+  .ogilvy-chan-pill:hover {
+    background: #2A1D13;
+    color: #FAF6EF;
+    border-color: #2A1D13;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(42, 29, 19, 0.2);
+  }
+  .ogilvy-chan-pill .chan-stat {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #8C4B00;
+    background: rgba(180, 130, 60, 0.12);
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: 2px;
+    transition: all 0.18s ease;
+  }
+  .ogilvy-chan-pill:hover .chan-stat {
+    background: rgba(255, 255, 255, 0.25);
+    color: #FFF;
+  }
+
+  .ogilvy-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  /* Confidential Column Card Styling */
+  .ogilvy-confidential-body {
+    flex: 1;
+    width: 100%;
+    min-height: 290px;
+    max-height: 350px;
+    background: linear-gradient(165deg, rgba(255, 253, 249, 0.98) 0%, rgba(247, 241, 232, 0.94) 100%);
+    border: 1px dashed rgba(180, 130, 60, 0.48);
+    border-radius: 3px;
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: inset 0 0 12px rgba(180, 130, 60, 0.05);
+    overflow: hidden;
+  }
+
+  .ogilvy-confidential-badge {
+    font-family: var(--sans);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #8C4B00;
+    background: rgba(180, 83, 9, 0.1);
+    border: 1px solid rgba(180, 83, 9, 0.25);
+    padding: 1px 6px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    white-space: nowrap;
+  }
+
+  .confidential-block {
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgba(180, 130, 60, 0.2);
+  }
+  .confidential-block:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .confidential-client-name {
+    font-family: var(--serif-display);
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #1A120B;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 2px;
+  }
+  .confidential-scope {
+    font-family: var(--sans);
+    font-size: 9.5px;
+    font-weight: 600;
+    color: #785A3C;
+    margin-bottom: 3px;
+    letter-spacing: 0.02em;
+  }
+  .confidential-desc {
+    font-family: var(--serif-body);
+    font-size: 10.5px;
+    line-height: 1.35;
+    color: #382717;
+  }
+
+  .confidential-footer {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(180, 130, 60, 0.2);
+    text-align: center;
+  }
+  .confidential-inquire-btn {
+    font-family: var(--sans);
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #FAF6EF;
+    background: #2A1D13;
+    border: 1px solid #2A1D13;
+    border-radius: 14px;
+    padding: 3px 9px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s ease;
+  }
+  .confidential-inquire-btn:hover {
+    background: #4A321E;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(42, 29, 19, 0.25);
+  }
+
   /* ========== FROSTED VINTAGE GLASSMORPHISM CARD STYLING ========== */
   .work-card {
     position: relative;
@@ -1477,16 +1666,125 @@ window.__IMG__ = {
     },
     {
       key: 'ogilvy',
-      title: 'Ogilvy',
+      title: 'Ogilvy — Social Strategy Intern',
       petal: IMG.petal2,
-      kind: 'work',
-      summary: 'Integrated brand campaigns, global launches, and multi-channel creative storytelling for premier international brands.',
-      items: [
-        { title: 'Integrated Brand Campaign', desc: 'Crafted strategic concept and narrative framework for multi-market rollout.' },
-        { title: 'Social Launch Architecture', desc: 'Orchestrated high-impact social activation and influencer creative strategy.' },
-        { title: 'Editorial Content Series', desc: 'Developed visual storytelling platform connecting brand heritage with modern culture.' },
-        { title: 'Hero Product Film', desc: 'Conceptual treatment and art direction for flagship product announcement.' },
-        { title: 'Retail Experience Activation', desc: 'Designed tactile consumer journey blending physical installation and AR elements.' }
+      kind: 'ogilvy',
+      summary: 'Premier Protein public social strategy, real-time cultural reactive marketing, and product launches across 1.5M+ cross-platform community, alongside confidential enterprise strategy for Workday & Eli Lilly.',
+      channels: [
+        { name: 'Instagram', stat: '241K', icon: '📷', url: 'https://www.instagram.com/premierprotein/' },
+        { name: 'TikTok', stat: '194K', icon: '🎵', url: 'https://www.tiktok.com/@premierprotein?lang=en' },
+        { name: 'Facebook', stat: '1M', icon: '📘', url: 'https://www.facebook.com/PremierProtein/?ref=NONE_xav_ig_profile_page_web#' },
+        { name: 'Threads', stat: '48.8K', icon: '🧵', url: 'https://www.threads.com/@premierprotein' },
+        { name: 'Pinterest', stat: '25.2K', icon: '📌', url: 'https://www.pinterest.com/PremierProtein/' }
+      ],
+      columns: [
+        {
+          id: 'realtime',
+          type: 'embed',
+          title: 'Real-Time Strategy',
+          brand: 'Premier Protein',
+          brandLink: 'https://www.instagram.com/premierprotein/',
+          copy: 'Reactive cultural concepts outperforming benchmark engagement.',
+          posts: [
+            {
+              id: 'ogilvy-rt-1',
+              label: 'Idea 1 (Over Benchmark)',
+              badge: 'Over Benchmark',
+              url: 'https://www.instagram.com/p/DbyX8QXnKt_/?img_index=1'
+            },
+            {
+              id: 'ogilvy-rt-2',
+              label: 'Idea 2 (3.6K likes)',
+              badge: '3.6K likes',
+              url: 'https://www.instagram.com/p/DbTmYDZAylZ/'
+            }
+          ]
+        },
+        {
+          id: 'evergreen',
+          type: 'embed',
+          title: 'Evergreen Content',
+          brand: 'Premier Protein',
+          brandLink: 'https://www.instagram.com/premierprotein/',
+          copy: 'Daily protein rituals, nutritional education & community retention.',
+          posts: [
+            {
+              id: 'ogilvy-eg-1',
+              label: 'Post 1',
+              badge: 'Post 1',
+              url: 'https://www.instagram.com/p/DZfeAzhnMCD/'
+            },
+            {
+              id: 'ogilvy-eg-2',
+              label: 'Post 2',
+              badge: 'Post 2',
+              url: 'https://www.instagram.com/p/DavWmldAT2e/'
+            },
+            {
+              id: 'ogilvy-eg-3',
+              label: 'Post 3',
+              badge: 'Post 3',
+              url: 'https://www.instagram.com/p/DcOUXu0g8hq/'
+            },
+            {
+              id: 'ogilvy-eg-4',
+              label: 'Threads Post',
+              badge: 'Threads Post',
+              url: 'https://www.threads.com/share/DdSSbWm5l/',
+              isThreads: true
+            }
+          ]
+        },
+        {
+          id: 'launch',
+          type: 'embed',
+          title: 'Product Launch & LTOs',
+          brand: 'Innovation',
+          brandLink: 'https://www.instagram.com/premierprotein/',
+          copy: 'Influencer-first soda launch (9.3M creator • 60K likes) & viral LTOs.',
+          posts: [
+            {
+              id: 'ogilvy-pl-1',
+              label: 'Sparkling Soda (60K likes)',
+              badge: 'Soda (60K likes)',
+              url: 'https://www.instagram.com/p/DboQYnqpwaf/'
+            },
+            {
+              id: 'ogilvy-pl-2',
+              label: 'Orange Cream Swirl',
+              badge: 'Orange Cream',
+              url: 'https://www.instagram.com/p/DYiRtjuyOGw/'
+            },
+            {
+              id: 'ogilvy-pl-3',
+              label: 'Pumpkin Spice LTO',
+              badge: 'Pumpkin Spice',
+              url: 'https://www.instagram.com/p/DdHpLldAbgF/'
+            }
+          ]
+        },
+        {
+          id: 'confidential',
+          type: 'confidential',
+          title: 'Workday & Eli Lilly',
+          brand: 'Brand Strategy',
+          badgeText: '🔒 CONFIDENTIAL • NDA',
+          copy: 'Enterprise B2B & Healthcare brand strategy frameworks.',
+          clients: [
+            {
+              name: 'Workday',
+              industry: 'Enterprise Tech & SaaS',
+              remit: 'B2B Brand Architecture & Global Workforce Transformation',
+              desc: 'Contributed to executive thought-leadership narrative, C-suite positioning frameworks, and workforce messaging architecture.'
+            },
+            {
+              name: 'Eli Lilly',
+              industry: 'Global Healthcare & Therapeutics',
+              remit: 'Patient-First Brand Strategy & Therapeutic Narrative',
+              desc: 'Crafted consumer empathy mapping, patient-centric communication frameworks, and healthcare brand trust systems.'
+            }
+          ]
+        }
       ]
     },
     {
@@ -1875,6 +2173,9 @@ window.__IMG__ = {
     } else if (cat.key === 'thedoor') {
       renderTheDoorEmbeds(cat);
       triggerInstagramEmbeds();
+    } else if (cat.key === 'ogilvy') {
+      renderOgilvy(cat);
+      triggerInstagramEmbeds();
     } else {
       renderWorkGrid(cat);
     }
@@ -2165,6 +2466,276 @@ window.__IMG__ = {
         window.instgrm.Embeds.process();
       }
     });
+  }
+
+  /* ========== OGILVY: SOCIAL STRATEGY INTERN RENDERER ========== */
+  function renderOgilvy(cat) {
+    var feed = document.createElement('div');
+    feed.className = 'ogilvy-feed';
+
+    // 1. Cross-Channel Footprint Header Bar
+    if (cat.channels && cat.channels.length > 0) {
+      var chanBar = document.createElement('div');
+      chanBar.className = 'ogilvy-channels-bar';
+
+      var label = document.createElement('span');
+      label.className = 'ogilvy-channels-label';
+      label.textContent = 'Premier Protein Channels (1.5M+ Community):';
+      chanBar.appendChild(label);
+
+      var list = document.createElement('div');
+      list.className = 'ogilvy-channels-list';
+
+      cat.channels.forEach(function(ch) {
+        var pill = document.createElement('a');
+        pill.href = ch.url;
+        pill.target = '_blank';
+        pill.rel = 'noopener noreferrer';
+        pill.className = 'ogilvy-chan-pill';
+        pill.title = 'Open Premier Protein ' + ch.name;
+
+        var iconSpan = document.createElement('span');
+        iconSpan.textContent = ch.icon;
+        pill.appendChild(iconSpan);
+
+        var nameText = document.createTextNode(' ' + ch.name + ' ');
+        pill.appendChild(nameText);
+
+        var statSpan = document.createElement('span');
+        statSpan.className = 'chan-stat';
+        statSpan.textContent = ch.stat;
+        pill.appendChild(statSpan);
+
+        list.appendChild(pill);
+      });
+
+      chanBar.appendChild(list);
+      feed.appendChild(chanBar);
+    }
+
+    // 2. 4-Column Grid
+    var grid = document.createElement('div');
+    grid.className = 'ogilvy-grid';
+
+    cat.columns.forEach(function(colData) {
+      var col = document.createElement('div');
+      col.className = 'thedoor-col-card';
+
+      // Header
+      var header = document.createElement('div');
+      header.className = 'thedoor-card-header';
+
+      var titleEl = document.createElement('h4');
+      titleEl.className = 'thedoor-card-title';
+      titleEl.textContent = colData.title;
+      titleEl.title = colData.title;
+      header.appendChild(titleEl);
+
+      var metaRow = document.createElement('div');
+      metaRow.className = 'thedoor-card-meta';
+
+      if (colData.type === 'confidential') {
+        var badge = document.createElement('span');
+        badge.className = 'ogilvy-confidential-badge';
+        badge.textContent = colData.badgeText || '🔒 CONFIDENTIAL';
+        metaRow.appendChild(badge);
+      } else {
+        var followersEl = document.createElement('span');
+        followersEl.className = 'thedoor-card-followers';
+        followersEl.textContent = colData.brand;
+        metaRow.appendChild(followersEl);
+
+        if (colData.brandLink) {
+          var profileLink = document.createElement('a');
+          profileLink.href = colData.brandLink;
+          profileLink.target = '_blank';
+          profileLink.rel = 'noopener noreferrer';
+          profileLink.className = 'thedoor-card-link';
+          profileLink.textContent = '[↗ Instagram]';
+          profileLink.title = 'Visit Premier Protein';
+          metaRow.appendChild(profileLink);
+        }
+      }
+
+      header.appendChild(metaRow);
+
+      if (colData.copy) {
+        var copyEl = document.createElement('p');
+        copyEl.className = 'thedoor-card-copy';
+        copyEl.textContent = colData.copy;
+        copyEl.title = colData.copy;
+        header.appendChild(copyEl);
+      }
+
+      col.appendChild(header);
+
+      if (colData.type === 'confidential') {
+        // Pill row placeholder for height alignment
+        var pillSpacer = document.createElement('div');
+        pillSpacer.className = 'thedoor-card-pills';
+        var confPill = document.createElement('span');
+        confPill.className = 'thedoor-pill-btn active';
+        confPill.style.cursor = 'default';
+        confPill.textContent = 'Strategic Remits';
+        pillSpacer.appendChild(confPill);
+        col.appendChild(pillSpacer);
+
+        // Confidential Body
+        var confBody = document.createElement('div');
+        confBody.className = 'ogilvy-confidential-body';
+
+        var blocksContainer = document.createElement('div');
+
+        colData.clients.forEach(function(c) {
+          var block = document.createElement('div');
+          block.className = 'confidential-block';
+
+          var cName = document.createElement('div');
+          cName.className = 'confidential-client-name';
+          cName.innerHTML = '<span>•</span> ' + c.name;
+          block.appendChild(cName);
+
+          var cScope = document.createElement('div');
+          cScope.className = 'confidential-scope';
+          cScope.textContent = c.remit;
+          block.appendChild(cScope);
+
+          var cDesc = document.createElement('div');
+          cDesc.className = 'confidential-desc';
+          cDesc.textContent = c.desc;
+          block.appendChild(cDesc);
+
+          blocksContainer.appendChild(block);
+        });
+
+        confBody.appendChild(blocksContainer);
+
+        var confFooter = document.createElement('div');
+        confFooter.className = 'confidential-footer';
+
+        var inqBtn = document.createElement('a');
+        inqBtn.href = 'mailto:audreanguyen.work@gmail.com?subject=Strategic%20Case%20Study%20Inquiry%20(Workday%20%26%20Eli%20Lilly)';
+        inqBtn.className = 'confidential-inquire-btn';
+        inqBtn.textContent = '✉ Request Case Studies';
+        confFooter.appendChild(inqBtn);
+
+        confBody.appendChild(confFooter);
+        col.appendChild(confBody);
+
+      } else {
+        // Embed Column
+        var track = document.createElement('div');
+        track.className = 'thedoor-card-track';
+
+        if (colData.posts && colData.posts.length > 1) {
+          var pillsRow = document.createElement('div');
+          pillsRow.className = 'thedoor-card-pills';
+
+          colData.posts.forEach(function(post, pIdx) {
+            var pillBtn = document.createElement('button');
+            pillBtn.type = 'button';
+            pillBtn.className = 'thedoor-pill-btn' + (pIdx === 0 ? ' active' : '');
+            pillBtn.textContent = post.badge || ('Post ' + (pIdx + 1));
+            pillBtn.title = post.label || post.badge;
+
+            pillBtn.addEventListener('click', function() {
+              pillsRow.querySelectorAll('.thedoor-pill-btn').forEach(function(b) {
+                b.classList.remove('active');
+              });
+              pillBtn.classList.add('active');
+              track.style.transform = 'translateX(-' + (pIdx * 100) + '%)';
+            });
+
+            pillsRow.appendChild(pillBtn);
+          });
+
+          col.appendChild(pillsRow);
+        } else {
+          var pillSpacer = document.createElement('div');
+          pillSpacer.className = 'thedoor-card-pills';
+          if (colData.posts && colData.posts[0]) {
+            var singleBadge = document.createElement('span');
+            singleBadge.className = 'thedoor-pill-btn active';
+            singleBadge.style.cursor = 'default';
+            singleBadge.textContent = colData.posts[0].badge || 'Post 1';
+            pillSpacer.appendChild(singleBadge);
+          }
+          col.appendChild(pillSpacer);
+        }
+
+        // Viewport & Scale Box
+        var viewport = document.createElement('div');
+        viewport.className = 'thedoor-card-viewport';
+
+        if (colData.posts && colData.posts.length > 0) {
+          colData.posts.forEach(function(post) {
+            var slide = document.createElement('div');
+            slide.className = 'thedoor-card-slide';
+
+            if (post.isThreads) {
+              // Threads Preview Card
+              var threadsBox = document.createElement('div');
+              threadsBox.style.padding = '36px 14px';
+              threadsBox.style.textAlign = 'center';
+              threadsBox.style.height = '100%';
+              threadsBox.style.display = 'flex';
+              threadsBox.style.flexDirection = 'column';
+              threadsBox.style.justifyContent = 'center';
+              threadsBox.style.alignItems = 'center';
+              threadsBox.style.background = '#FFFFFF';
+
+              threadsBox.innerHTML = '<div style="font-size:32px;margin-bottom:8px;">🧵</div>' +
+                '<div style="font-family:var(--serif-display);font-size:13.5px;font-weight:700;color:#1A120B;margin-bottom:4px;">Premier Protein on Threads</div>' +
+                '<div style="font-family:var(--serif-body);font-size:11px;color:#5A3A1C;margin-bottom:14px;line-height:1.35;">Real-time conversational community engagement & daily protein culture (48.8K followers).</div>' +
+                '<a href="' + post.url + '" target="_blank" rel="noopener noreferrer" style="font-family:var(--sans);font-size:10.5px;font-weight:700;color:#FAF6EF;background:#2A1D13;padding:5px 12px;border-radius:14px;text-decoration:none;">↗ Open on Threads</a>';
+
+              slide.appendChild(threadsBox);
+
+            } else {
+              // Native Instagram Embed
+              var scaleBox = document.createElement('div');
+              scaleBox.className = 'thedoor-scale-box';
+
+              var bq = document.createElement('blockquote');
+              bq.className = 'instagram-media';
+              bq.setAttribute('data-instgrm-permalink', post.url);
+              bq.setAttribute('data-instgrm-version', '14');
+              bq.style.width = '326px';
+              bq.style.minWidth = '326px';
+              bq.style.margin = '0';
+              bq.style.background = '#FFFFFF';
+
+              var fallbackA = document.createElement('a');
+              fallbackA.href = post.url;
+              fallbackA.target = '_blank';
+              fallbackA.rel = 'noopener noreferrer';
+              fallbackA.style.display = 'block';
+              fallbackA.style.padding = '36px 12px';
+              fallbackA.style.textAlign = 'center';
+              fallbackA.style.fontFamily = 'var(--sans)';
+              fallbackA.style.fontSize = '11px';
+              fallbackA.style.color = '#8C4B00';
+              fallbackA.style.textDecoration = 'none';
+              fallbackA.textContent = '↗ View ' + (post.badge || 'Post') + ' on Instagram';
+
+              bq.appendChild(fallbackA);
+              scaleBox.appendChild(bq);
+              slide.appendChild(scaleBox);
+            }
+
+            track.appendChild(slide);
+          });
+        }
+
+        viewport.appendChild(track);
+        col.appendChild(viewport);
+      }
+
+      grid.appendChild(col);
+    });
+
+    feed.appendChild(grid);
+    galleryBody.appendChild(feed);
   }
 
   function renderTheDoorEmbeds(cat) {
